@@ -2,11 +2,13 @@ com\omi\chat\service\impl\MemberServiceImpl.class
 com\omi\chat\transformer\RoomTransformer.class
 com\omi\chat\model\entity\Role.class
 com\omi\chat\repository\UserRepository.class
-com\omi\chat\controller\AuthController.class
 com\omi\chat\config\SecurityConfig.class
 com\omi\chat\repository\RoomRepository.class
 com\omi\chat\model\entity\Member.class
+com\omi\chat\config\SpringSecurityAuditAwareImpl.class
 com\omi\chat\controller\RoomController.class
+com\omi\chat\model\response\PagedResponse.class
+com\omi\chat\config\AuditingConfig.class
 com\omi\chat\model\entity\RoleName.class
 com\omi\chat\exception\AppException.class
 com\omi\chat\model\request\LoginRequest.class
@@ -16,6 +18,7 @@ com\omi\chat\model\entity\User.class
 com\omi\chat\model\request\SignUpRequest.class
 com\omi\chat\service\impl\CustomUserDetailsService.class
 com\omi\chat\model\response\JwtAuthenticationResponse.class
+com\omi\chat\utils\Constant.class
 com\omi\chat\Application.class
 com\omi\chat\config\JwtTokenProvider.class
 com\omi\chat\model\entity\Room.class
@@ -31,3 +34,4 @@ com\omi\chat\controller\MemberController.class
 com\omi\chat\model\response\ApiResponse.class
 com\omi\chat\repository\MemberRepository.class
 com\omi\chat\service\MemberService.class
+com\omi\chat\model\response\UserProfile.class
