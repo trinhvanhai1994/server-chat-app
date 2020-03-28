@@ -1,7 +1,12 @@
 package com.omi.chat.controller;
 
+import com.omi.chat.config.JwtTokenProvider;
 import com.omi.chat.model.entity.Member;
+import com.omi.chat.repository.RoleRepository;
+import com.omi.chat.repository.UserRepository;
 import com.omi.chat.service.MemberService;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,9 +22,21 @@ import java.util.List;
 @RestController
 public class MemberController {
     private final MemberService service;
+    private AuthenticationManager authenticationManager;
+    private UserRepository userRepository;
+    private RoleRepository roleRepository;
+    private PasswordEncoder passwordEncoder;
+    private JwtTokenProvider tokenProvider;
 
-    public MemberController(MemberService service) {
+    public MemberController(MemberService service, AuthenticationManager authenticationManager,
+                            UserRepository userRepository, RoleRepository roleRepository,
+                            PasswordEncoder passwordEncoder, JwtTokenProvider tokenProvider) {
         this.service = service;
+        this.authenticationManager = authenticationManager;
+        this.userRepository = userRepository;
+        this.roleRepository = roleRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.tokenProvider = tokenProvider;
     }
 
     @GetMapping("/members")
